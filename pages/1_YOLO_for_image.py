@@ -10,8 +10,8 @@ st.title("Welcome to YOLO for Image")
 st.write("Please Uploaded Image to get detections")
 
 with st.spinner('Please wait your model is loading'):
-    yolo5=YOLO_Pred(onnx_model='./models/yolov5.onnx', data_yaml='./models/data.yaml',size=640)
-    yolo8=YOLO_Pred(onnx_model='./models/yolov8.onnx', data_yaml='./models/data.yaml',size=1280)
+    yolo5=YOLO_Pred(onnx_model='./models/yolov5.onnx', data_yaml='./models/data_yolov5.yaml',size=640)
+    yolo8=YOLO_Pred(onnx_model='./models/yolov82.onnx', data_yaml='./models/data_yolov8_2.yaml',size=1280)
     #st.balloons()
 
 def upload_image():
@@ -54,6 +54,7 @@ def main():
                   with st.spinner("""
                         Getting objects from image. Please wait
                                   """):
+                  
                     image_array=np.array(image_object)
                     if radio_b == "YOLOv5":
                         pred_img=yolo5.predictions_v5(image_array)
