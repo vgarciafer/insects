@@ -6,4 +6,4 @@ base64
 ultralytics
 cv2
 os
-python-yaml
+pyYaml
