@@ -1,45 +1,40 @@
 import streamlit as st
+import yaml
+import base64
 
 st.set_page_config(page_title="Home", layout='wide', page_icon='./images/house.png')
-st.title("Yolo Object Detection App")
-st.caption("This web application demostrate Object Detection")
+st.title("Detection App")
+
+yaml_file='./models/12/data_12.yaml'
+with open(yaml_file) as f:
+    data = yaml.safe_load(f)
+
+main_bg_ext = "png"
+main_bg = "./images/imagen1.JPG"
+st.markdown(
+         f"""
+         <style>
+         .stApp {{
+             background: url(data:image/{main_bg_ext};base64,{base64.b64encode(open(main_bg, "rb").read()).decode()});
+             background-size: cover
+         }}
+         </style>
+         """,
+         unsafe_allow_html=True
+     )
+
 
 #Content
-st.markdown("""
-     ### This App detects objects from Images
-    -Automatically detects 20 types of insects from image
-            
-    -[Click here for App](/YOLO_for_image/)     
-
-    
-
-
-    Below give are the object that our model with detect:   
-    1. unidentified
-    2.  ant
-    3.  apis mellifera
-    4.  bee
-    5.  beetle
-    6.  bombus terrestris5
-    7.  butterfly
-    8.  danaus chrysippus
-    9.  eucera
-    10. fly
-    11.  hoverfly
-    12.  lasiommata megera
-    13.  megascolia maculata
-    14.  moth
-    15.  oedemera barbara
-    16.  papilio machaon
-    17.  pieris rapaee
-    18.  pieris rape
-    19.  polyommatus celina
-    20.  scaeva pyrastri
-    21.  vanessa cardui
-    22.  wasp
-    23.  xylocopa violacea 
-          
+st.markdown(f"""
+     ### Esta App detecta insectos en imágenes o en video.
+    Detecta {data["nc"]} tipos de insectos. 
+    Las especies que nuestro modelo puede detectar son algunas de las siguientes:   
              """)
+
+
+for i, specie in enumerate(data["names"]):
+   st.write(str(i + 1) + '. ' + str(specie))    
+
 
 
 

@@ -1,5 +1,0 @@
-train: data_images/train
-val: data_images/test
-nc: 12
-names: ["ant", "apis mellifera", "bee", "beetle", "bombus terrestris", "butterfly",
-  "eucera", "fly", "hoverfly", "pieris rapaee", "vanessa cardui", "wasp"]

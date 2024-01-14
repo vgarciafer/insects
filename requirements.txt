@@ -1,0 +1,8 @@
+matplotlib
+sympy
+tqdm
+psutil
+pathlib
+sys
+scipy
+lap
