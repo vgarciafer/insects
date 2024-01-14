@@ -1,5 +1,5 @@
 python<= 3.6
-pyyaml
+ruamel.yaml<0.18.0
 PIL
 numpy
 cv2
