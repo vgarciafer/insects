@@ -1,3 +1,4 @@
+pyyaml
 PIL
 numpy
 cv2
@@ -6,5 +7,4 @@ base64
 ultralytics
 cv2
 os
-pyYaml
 streamlit
