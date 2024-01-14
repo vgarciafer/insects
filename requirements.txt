@@ -7,3 +7,4 @@ ultralytics
 cv2
 os
 pyYaml
+streamlit
