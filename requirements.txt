@@ -1,8 +1,9 @@
-matplotlib
-sympy
-tqdm
-psutil
-pathlib
-sys
-scipy
-lap
+PIL
+numpy
+cv2
+datetime
+base64
+ultralytics
+cv2
+os
+yaml
